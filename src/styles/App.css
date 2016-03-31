@@ -1,0 +1,86 @@
+/* Base Application Styles */
+
+body {
+  color: #fff;
+  background: white;
+  font-family: Raleway;
+}
+.navbar-inverse {
+  margin-bottom: 0px;
+  box-shadow: 0 2px 5px orange;
+  background-color: #fff;
+  border: 1px;
+  border-color: transparent;
+}
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+  }
+}
+.header-home {
+  background: transparent;
+  background-size: cover;
+  margin-top: 8%;
+  margin-bottom: -15px;
+}
+.show-grid img {
+  width: 240px;
+  height: 240px;
+  border: 1px solid rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  display: box;
+  margin: auto;
+}
+.show-grid h1 {
+  text-align: center;
+  color: #000;
+}
+
+.neal-section.subhero {
+  background-color: orange;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 10px 5px rgba(0,0,0,.2);
+  text-align: center;
+  padding-bottom: 10%;
+  padding-top: 10%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: transparent;
+}
+
+.input-color {
+  color: black;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: black;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+  background-color: transparent;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-color: transparent;
+}
+
+footer.neal-footer.navbar {
+  background-color: black;
+  padding: 4rem 0;
+  margin-top: 3em;
+  color: #ededed;
+  font-size: .8rem;
+  margin-bottom: 0px;
+  box-shadow: 0 0 10px 1px rgba(0,0,0,.2);
+}
+.navbar-inverse .navbar-nav>li>a {
+  cursor: pointer;
+
+}
+
+.nav>li, .nav>li>a {
+  font-size: 18px;
+}
