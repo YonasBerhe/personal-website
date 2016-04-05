@@ -2,144 +2,153 @@ require('normalize.css');
 require('styles/App.css');
 
 import React from 'react';
+import Navigation from './global/nav';
 
-import {Navbar, Nav, NavItem, NavDropdown, MenuItem, Grid, Row, Col, Button} from 'react-bootstrap';
+import {Navbar, Nav, NavItem, NavDropdown, MenuItem, Grid, Row, Col, Button, Input} from 'react-bootstrap';
 
 import {Hero, Footer, Section} from 'neal-react';
-
-
-const brandName = "SamplePage";
-const brand = <span>{brandName}</span>;
-
-
-const businessAddress = (
-  <address>
-    <strong>{brandName}</strong><br/>
-    1337 Market Street, Suite 1337<br/>
-    San Francisco, CA 94103<br/>
-    +1 (123) 456-7890
-  </address>
-);
-
-class form extends React.Component {
-  render() {
-    return (
-      <div>
-      <Navbar inverse fixedTop>
-   <Navbar.Header>
-     <Navbar.Brand>
-       <a href="#">React-Bootstrap</a>
-     </Navbar.Brand>
-     <Navbar.Toggle />
-   </Navbar.Header>
-   <Navbar.Collapse>
-     <Nav pullRight>
-       <NavItem href="#">Home</NavItem>
-       <NavItem  href="#">About</NavItem>
-       <NavDropdown eventKey={3} title="Portfolio" id="basic-nav-dropdown">
-         <MenuItem eventKey={3.1}>Action</MenuItem>
-         <MenuItem eventKey={3.2}>Another action</MenuItem>
-         <MenuItem eventKey={3.3}>Something else here</MenuItem>
-         <MenuItem divider />
-         <MenuItem eventKey={3.3}>Separated link</MenuItem>
-       </NavDropdown>
-       <NavItem href="#">Contact</NavItem>
-     </Nav>
-   </Navbar.Collapse>
- </Navbar>
+import {Link} from 'react-router';
 
 
 
-
-      <Hero className="text-xs-center header-home">
-           <Grid>
-          <Row className="show-grid">
-            <Col xs={6} md={4}>
-
-              <img src="./assets/img/photon.jpg" alt="boohoo" class="img-responsive" data-reactid=".0.1.0.1.0.0.1"></img>
-
-            </Col>
-            <Col xs={12} md={8}>
-            <h1>UX Designer / Coder</h1>
-            </Col>
-          </Row>
-        </Grid>
-      </Hero>
+const linkHome ="<span><a>www.yonasberhe.tech</a></span>";
 
 
-      <Section className="subhero">
+const Mailer = React.createClass ({
 
-
-
-<Mailer />
-
-      </Section>
-
-
-      <Footer brandName={brandName}
-          facebookUrl="http://www.facebook.com"
-          twitterUrl="http://www.twitter.com/dennybritz"
-          githubUrl="https://github.com/dennybritz/neal-react"
-          address={businessAddress}>
-        </Footer>
-      </div>
-    );
-  }
-}
-
-
-var Mailer = React.createClass ({
-  _inputfirstname: function (event) {
-    console.log("this ran");
-    this.setState ({
-      firstname: event.target.value
-
+  _inputfieldname: function (event) {
+    console.log("name");
+     this.setState ({
+      name :event.target.value
     })
-        console.log(this.state.firstname);
   },
+    
+
+_inputfieldemail: function (event) {
+console.log("email")
+  this.setState ({
+  email: event.target.value
+
+})
+}, 
+
+
+_inputfieldmessage: function (event) {
+console.log("message")
+  this.setState ({
+  message: event.target.value
+
+})
+}, 
+
+// setting state of input field
   getIntialState: function() {
     return
-    {
-          firstname: ""
-    };
+    ({
+// setting state of these values
+          name: "",
+          email: "",
+	  message: ""
+        
+    });
+
   },
+
+
+_capturevalue: function (event) {
+  event.preventDefault();
+    fetch('http://localhost:4812/data',  {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+          body: JSON.stringify({
+              Name: this.state.name, 
+	      Email: this.state.email, 
+	      Message: this.state.message
+          })
+    }).then(
+	window.location.href = '/#/about')
+
+alert("I will get back to you shortly" + linkHome );
+},
+
+
+
   render: function () {
   return (
-    <form className="input-color">
-   <Firstname firstname = {this._inputfirstname}/>
-  <Lastname />
+    <form onSubmit={this._capturevalue}>
 
-    <Button bsStyle="info">Submit</Button>
+<Name name= {this._inputfieldname} />
+<Email email= {this._inputfieldemail} />
+<Textarea message= {this._inputfieldmessage} />  
+    <Button bsStyle="info" className="submit-form" type="submit">Submit</Button>
     </form>
   );
   }
 }
 )
+const Name = React.createClass( {
 
-var Firstname = React.createClass( {
-callparent: function () {
-  console.log("anything");
-  this.props.firstname ()
-
-},
   render() {
-    console.log(this.props.firstname);
+
   return (
-    <input onChange={this.callparent} type="text" />
+  <Input onChange={this.props.name}  type="text" placeholder=" Your Name" />
   );
-  }
 }
+}
+
 )
 
-class Lastname extends React.Component {
+
+const Email = React.createClass( {
+
   render() {
+
   return (
-    <input type="text" value="" placeholder="lastname"/>
+    <Input onChange={this.props.email}  type="text" placeholder="Your Email" />
   );
+}
+  }
+
+)
+
+const Textarea = React.createClass( {
+
+  render() {
+
+  return (
+
+     <Input onChange={this.props.message}  type="textarea"  placeholder="Your Message" />
+  );
+}
+  }
+
+)
+
+// UPNEXT: add form validation to email input field
+class Mailerform extends React.Component {
+  render() {
+    return (
+      <div>
+  <Navigation /> 
+
+
+      <Section className="subhero contact-form">
+<h1>Contact Me!</h1>
+<Mailer />
+
+      </Section>
+
+
+      </div>
+    );
   }
 }
+
 //
 // AppComponent.defaultProps = {
 // };
 
-export default form;
+export default Mailerform;
