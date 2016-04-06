@@ -9,47 +9,56 @@ import {Grid, Row, Col, Button} from 'react-bootstrap';
 import {Hero, Footer, Sectionm, Team, TeamMember, Section} from 'neal-react';
 import {Link} from 'react-router';
 
+import json from './projects.json';
+
+console.log(json.results[0].reiproject);
+
 const brandName = "";
 
 
-class AppComponent extends React.Component {
+const Rei = React.createClass({
+
+getInitialState() {
+    return {
+      title: '',
+      content: ''
+    };
+  },
+
+componentDidMount() {
+  const myProjects = json.results[0];
+   this.setState({ 
+  title: myProjects.reiproject.title,
+  content: myProjects.reiproject.content
+    });
+},
+
+
+
+render() {
+return(
+<div>
+<h1>{this.state.title}</h1>
+<h1>{this.state.content}</h1>
+</div>
+)
+
+}
+
+})
+
+
+
+class Case extends React.Component {
+
   render() {
     return (
       <div>
 
-      <Navigation />;
+      <Navigation />
     <Section className="subhero">
-      <h1>
-	Work
-      </h1>
-
-
-<Team>
- <TeamMember name="Collaborative Camping"  imageUrl="../images/REI_Photos_Chrome.png">
-
-<Button  bsStyle="info"  href="#/rei">Read More...</Button>
-
-</TeamMember>
-
-
- <TeamMember name="Home Purchase Planning"  imageUrl="../images/phonesdouble.png">
-
-<Button  bsStyle="info"  href="#/wellsfargo">Read More...</Button>
-
-</TeamMember>
-
- <TeamMember name="Coming soon..."  imageUrl="../images/both.png">
-
-
-</TeamMember>
-
-
-
-
-</Team>
-
-
-      </Section>
+ <Rei /> 
+     </Section>
 
 
       <Footer brandName={brandName}
@@ -65,4 +74,4 @@ class AppComponent extends React.Component {
 // AppComponent.defaultProps = {
 // };
 
-export default AppComponent;
+export default Case;

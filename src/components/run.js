@@ -9,7 +9,7 @@ import Caselist from './caselist';
 import About from './about';
 import {hashHistory, Router, Route} from 'react-router';
 
-
+//DO this: App not routing to home from any page check react-router
 // Render the main component into the dom
 ReactDOM.render((
   <Router history={hashHistory}>

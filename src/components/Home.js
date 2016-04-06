@@ -17,19 +17,10 @@ class AppComponent extends React.Component {
     return (
       <div>
 
-      <Navigation />;
+      <Navigation />
       <Hero className="text-xs-center header-home">
-           <Grid>
-          <Row className="show-grid">
-            <Col xs={12} md={4}>
-
-              <img src="../images/profileimage.jpg" alt="boohoo" className="img-responsive"></img>
-          </Col>
-            <Col xs={12} md={8}>
-            <h1>Designer/Developer</h1>
-            </Col>
-          </Row>
-        </Grid>
+      <h1>Yonas Berhe</h1> 
+      <h2>Designer/Developer</h2>
       </Hero>
 
     <Section className="subhero">
@@ -39,26 +30,17 @@ class AppComponent extends React.Component {
 
 
 <Team>
+
  <TeamMember name="Collaborative Camping"  imageUrl="../images/REI_Photos_Chrome.png">
-
-<Button  bsStyle="info"  href="#/rei">Read More...</Button>
-
-</TeamMember>
-
+ 
+ </TeamMember>
 
  <TeamMember name="Collaborative Camping"  imageUrl="../images/phonesdouble.png">
-
-<Button  bsStyle="info"  href="#/wellsfargo">Read More...</Button>
-
-</TeamMember>
+ <Button  bsStyle="info"  href="#/wellsfargo">Read More...</Button>
+ </TeamMember>
 
  <TeamMember name="Coming soon..."  imageUrl="../images/both.png">
-
-
-</TeamMember>
-
-
-
+ </TeamMember>
 
 </Team>
 

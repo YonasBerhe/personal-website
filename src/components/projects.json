@@ -1,0 +1,23 @@
+{
+    "results": 
+      [
+         {
+            "reiproject": {
+                "id": 1,
+                "title": "hello",
+                "link": "",
+                "content": "Blokus is a fun game where 4 players fight each other for territory.  This game has always been a love of mine at parties and I am very excited to say that I made a web version of this game!  Blokus online was created using pure HTML5, CSS3, Javascript and jQuery.",
+                "image": ""
+            },
+            "wellsproject": {
+                "id": 1,
+                "title": "",
+                "link": "",
+                "content": "",
+                "image": ""
+            }
+        }
+
+    ]
+
+}
