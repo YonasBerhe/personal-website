@@ -16,14 +16,13 @@ class Rei extends React.Component {
 	<div className="rei-case-study">
 
      <h1> REI Case Study  </h1>
-	
+
 <p> REI design sprint to create a better collabrotive planning<br />experience on REI.com</p>
 <img src="../images/2016_asset_header.png" className="hero img-responsive" />
-	<h3>
-Recreational Equipment, Inc., commonly known as REI, is a privately held American retail corporation organized as a consumers' cooperative, selling outdoor recreation gear, sporting goods, and clothing via some retail stores in states, catalogs, and the Internet.
+	<h3>Recreational Equipment, Inc., commonly known as REI, is a privately held American retail corporation organized as a consumers' cooperative, selling outdoor recreation gear, sporting goods, and clothing via some retail stores in states, catalogs, and the Internet.
 	</h3>
 
-	<h2>   
+	<h2>
 	The Challenge
 	</h2>
 	<h3>
@@ -74,8 +73,8 @@ Delivery
 <img src="../images/REI_Photos_Chrome.png" className="img-responsive" />
  <Button href="http://yonasberhe.github.io/p2UXDIPrototype/#/screens/133617882" bsStyle="info"> Clickable Prototype</Button>
 	</div>
-	
-	
+
+
 	      <Footer brandName={brandName}
 	     facebookUrl="http://www.facebook.com"
 	twitterUrl="http://www.twitter.com/dennybritz"

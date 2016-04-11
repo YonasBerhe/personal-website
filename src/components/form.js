@@ -15,7 +15,6 @@ const linkHome ="<span><a>www.yonasberhe.tech</a></span>";
 
 
 const Mailer = React.createClass ({
-
   _inputfieldname: function (event) {
     console.log("name");
      this.setState ({
@@ -78,7 +77,7 @@ alert("I will get back to you shortly" + linkHome );
 
   render: function () {
   return (
-    <form onSubmit={this._capturevalue}>
+    <form onSubmit={this._capturevalue} id="mailer-form">
 
 <Name name= {this._inputfieldname} />
 <Email email= {this._inputfieldemail} />
@@ -107,7 +106,7 @@ const Email = React.createClass( {
   render() {
 
   return (
-    <Input onChange={this.props.email}  type="text" placeholder="Your Email" />
+    <Input onChange={this.props.email} className="email-input"  type="text" placeholder="Your Email" name="email" />
   );
 }
   }

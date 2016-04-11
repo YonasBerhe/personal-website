@@ -4,17 +4,17 @@
          {
             "reiproject": {
                 "id": 1,
-                "title": "hello",
-                "link": "",
-                "content": "Blokus is a fun game where 4 players fight each other for territory.  This game has always been a love of mine at parties and I am very excited to say that I made a web version of this game!  Blokus online was created using pure HTML5, CSS3, Javascript and jQuery.",
-                "image": ""
+                "title": "Collaborative Camping",
+                "link": "Read more",
+                "previewtext": "Allow users to discover and book (if applicable) other outdoor activities to take part in while camping. Provide an interactive trip checklist",
+               "image": "http://s16.postimg.org/6ahpvg4g5/rei_display.png"
             },
             "wellsproject": {
                 "id": 1,
-                "title": "",
-                "link": "",
-                "content": "",
-                "image": ""
+                "title": "Wells Fargo Camping",
+                "link": "Read More",
+                "previewtext": "Our goal was to transform Wells Fargo My FirstHome into a native mobile application. Wells Fargo wants to transform My FirstHome into a native app",
+                "image": "http://s16.postimg.org/czo9bgps5/wells_display.png"
             }
         }
 
