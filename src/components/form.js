@@ -68,7 +68,7 @@ _capturevalue: function (event) {
 	      Message: this.state.message
           })
     }).then(
-	window.location.href = '/#/about')
+	window.location.href = '/#/route')
 
 alert("I will get back to you shortly" + linkHome );
 },

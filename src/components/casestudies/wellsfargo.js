@@ -4,7 +4,7 @@ import Navigation from '../global/nav'
 
 
 import {Navbar, Nav, NavItem, NavDropdown,Button,MenuItem} from 'react-bootstrap';
-const brandName = 'hello world';
+const brandName = '';
 const businessAddress = brandName;
 import {Footer, Section} from 'neal-react';
 
@@ -103,9 +103,9 @@ Delivery
 	
 	
 	      <Footer brandName={brandName}
-	     facebookUrl="http://www.facebook.com"
-	twitterUrl="http://www.twitter.com/dennybritz"
-	  githubUrl="https://github.com/dennybritz/neal-react">
+	     facebookUrl=""
+	twitterUrl=""
+	  githubUrl="">
        </Footer>
       </div>
     );

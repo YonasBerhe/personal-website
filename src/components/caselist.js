@@ -16,6 +16,10 @@ console.log(json.results[0].reiproject.image);
 const brandName = "";
 
 
+
+
+
+
 const Rei = React.createClass({
 
 getInitialState() {
@@ -44,22 +48,23 @@ render() {
 return(
 <div>
 
-<Grid>
 
- <Row className="show-grid case-list">
- <Col xs={12} md={4}>
+
+
 <a href="#/rei/" className="preview-before">
     <img src={this.state.image} alt="collabrative camping" className="img-responsive"  />
 </a>
 <a className="rei-title-cases">{this.state.title}</a>
-<h2> {this.state.previewtext}</h2>
+<h2  className= "preview-text-case"> {this.state.previewtext}</h2>
 
  <Button bsStyle="info" href="http://yonasberhe.github.io/p2UXDIPrototype/#/screens/133617882" >Prototype</Button>
-</Col>
 
- </Row>
 
-</Grid>
+
+
+
+
+
 
 
 </div>
@@ -102,22 +107,12 @@ render() {
 return(
 <div>
 
-<Grid>
-
- <Row className="show-grid case-list">
- <Col xs={12} md={4}>
-<a href="#/rei/" className="preview-before">
+    <a href="#/rei/" className="preview-before">
     <img src={this.state.image} alt="collabrative camping" className="img-responsive"  />
 </a>
 <a className="rei-title-cases">{this.state.title}</a>
-<h2> {this.state.previewtext}</h2>
+<h2  className= "preview-text-case"   > {this.state.previewtext}</h2>
  <Button bsStyle="info" href="http://yonasberhe.github.io/p2UXDIPrototype/#/screens/133617882" >Prototype</Button>
-
-</Col>
-
- </Row>
-
-</Grid>
 
 
 </div>
@@ -126,6 +121,10 @@ return(
 }
 
 })
+
+
+
+
 
 
 
@@ -156,12 +155,7 @@ class Case extends React.Component {
      </Section>
 
 
-      <Footer brandName={brandName}
-          facebookUrl=""
-          twitterUrl=""
-          githubUrl="">
-        </Footer>
-      </div>
+          </div>
     );
   }
 }

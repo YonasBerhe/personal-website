@@ -20,14 +20,8 @@ class Navigation extends React.Component {
    <Navbar.Collapse>
      <Nav pullRight>
       <li><Link to="/"  activeStyle={{color:"#ffc04c"}}>Home</Link></li>
-<li><Link to="/about"  activeStyle={{color:"#ffc06c"}}>About</Link></li>
 
-<NavDropdown title="Portfolio" id="basic-nav-dropdown">
-      <li><Link to="/caselist"  activeStyle={{color:"#ffc04c"}}>Case studies</Link></li>
-      <li><Link to="/development"  activeStyle={{color:"#ffc04c"}}>Development</Link></li>
-</NavDropdown>
 <li><Link to="/contact"  activeStyle={{color:"#ffc06c"}}>Contact</Link></li>
-<li><Link to="/googlelink"  activeStyle={{color:"#ffc06c"}}>Resume</Link></li>
 
 
 
