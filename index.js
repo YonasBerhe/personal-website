@@ -1,3 +1,5 @@
+"use strict"
+
 let nodemailer, express, app, bodyParser, path, data, fs, creds;
 
 
@@ -6,7 +8,9 @@ let nodemailer, express, app, bodyParser, path, data, fs, creds;
  app = express();
  bodyParser = require('body-parser');
  path = require('path');
-
+ fs = require('fs');
+ creds = fs.readFileSync('creds.json', 'utf8');
+ console.log(creds)
 
 
 // var morgan = require('morgan');
@@ -41,7 +45,7 @@ app.post('/data', function(req, res) {
     service: 'gmail',
     auth: {
       user: 'yonas.berhe007@gmail.com',
-      pass: 'EqA9q83*i'
+      pass: creds.pass
     }
   });
 
