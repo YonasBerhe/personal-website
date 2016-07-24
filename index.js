@@ -1,16 +1,17 @@
 "use strict"
 
-let nodemailer, express, app, bodyParser, path, data, fs, creds;
+let nodemailer, express, app, bodyParser, path, data, fs, creds, smtpTransport;
 
 
  nodemailer = require('nodemailer');
+ smtpTransport = require('nodemailer-smtp-transport');
  express = require('express');
  app = express();
  bodyParser = require('body-parser');
  path = require('path');
  fs = require('fs');
  creds = fs.readFileSync('creds.json', 'utf8');
- console.log(creds)
+//  console.log(creds)
 
 
 // var morgan = require('morgan');
@@ -41,15 +42,28 @@ app.post('/data', function(req, res) {
   data = req.body;
 
 
-  var transporter = nodemailer.createTransport('SMTP', {
-    service: 'outlook',
-    auth: {
-      user: 'ymberhe@outlook.com',
-      pass: creds.pass
-    }
-  });
+
+
+  // var transporter = nodemailer.createTransport('SMTP', {
+  //   service: 'gmail',
+  //   auth: {
+  //     user: 'yonas.berhe007@gmail.com',
+  //     pass: creds.pass
+  //   }
+  // });
 
   // var transporter = nodemailer.createTransport('smtps://user%40gmail.com:pass@smtp.gmail.com');
+
+
+var options = {
+    service: 'hotmail',
+    auth: {
+        user: 'ymberhe@outlook.com',
+        pass: 'Four81234206'
+    }
+  };
+  var transporter = nodemailer.createTransport(smtpTransport(options))
+
 
 
   // setup e-mail data with unicode symbols
