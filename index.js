@@ -58,7 +58,7 @@ var options = {
   var mailOptions = {
     // check if you need these from
     from: data.Email, // sender address
-    to: 'yonas.berhe007@gmail.com', // list of receivers
+    to: 'exp@expmail.com', // list of receivers
     subject: 'Message from personal website', // Subject line
     // text: // plaintext body
     html: "</b>" + data.Name +  "</br>" + data.Email + "</br> " +   data.Message 
