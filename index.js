@@ -1,6 +1,6 @@
 "use strict"
 
-let nodemailer, express, app, bodyParser, path, data, fs, creds, smtpTransport;
+let nodemailer, express, app, bodyParser, path, data, fs, creds, smtpTransport, goodreads;
 
 
  nodemailer = require('nodemailer');
@@ -12,6 +12,7 @@ let nodemailer, express, app, bodyParser, path, data, fs, creds, smtpTransport;
  fs = require('fs');
  creds = fs.readFileSync('creds.json', 'utf8');
 //  console.log(creds)
+ goodreads = require('goodreads');
 
 
 // var morgan = require('morgan');

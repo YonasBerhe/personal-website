@@ -47,9 +47,7 @@ const Mailer = React.createClass({
       name: "",
       email: "",
       message: ""
-
     });
-
   },
 
 
