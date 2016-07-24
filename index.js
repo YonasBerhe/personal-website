@@ -49,8 +49,7 @@ var options = {
     auth: {
         user: 'YOUREMAIL',
         pass: 'YOURPASS WORD'
-    }
-  };
+    }};
   var transporter = nodemailer.createTransport(smtpTransport(options))
 
 
