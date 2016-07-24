@@ -10,7 +10,8 @@ app = express();
 bodyParser = require('body-parser');
 path = require('path');
 fs = require('fs');
-creds = fs.readFileSync('creds.json', 'utf8');
+creds = JSON.parse(fs.readFileSync('creds.json', 'utf8'));
+
 //  console.log(creds)
 goodreads = require('goodreads');
 // trying requiring files for goodreads in this one
@@ -65,42 +66,42 @@ app.get('/books', function (req, res) {
 });
 
 
-// app.post('/data', function (req, res) {
-//   console.log(req.body);
-//   data = req.body;
+app.post('/data', function (req, res) {
+  console.log(req.body);
+  data = req.body;
 
 
-//   options = {
-//     service: 'hotmail',
-//     auth: {
-//       user: 'ymberhe@outlook.com',
-//       pass: 'Four81234206'
-//     }
-//   };
-//   transporter = nodemailer.createTransport(smtpTransport(options))
-
-
-
-//   // setup e-mail data with unicode symbols
-//   mailOptions = {
-//     // check if you need these from
-//     from: data.Email, // sender address
-//     to: 'yonas.berhe007@gmail.com', // list of receivers
-//     subject: 'Message from personal website', // Subject line
-//     // text: // plaintext body
-//     html: "</b>" + data.Name + "</br>" + data.Email + "</br> " + data.Message
-//   };
+  options = {
+    service: 'hotmail',
+    auth: {
+      user: 'ymberhe@outlook.com',
+      pass: 'Four81234206'
+    }
+  };
+  transporter = nodemailer.createTransport(smtpTransport(options))
 
 
 
-//   transporter.sendMail(mailOptions, function (error, info) {
-//     if (error) {
-//       return console.log(error);
-//     }
-//     console.log('Message sent: ' + info.response);
-//   });
-//   // res.sendStatus(200);
-// })
+  // setup e-mail data with unicode symbols
+  mailOptions = {
+    // check if you need these from
+    from: data.Email, // sender address
+    to: 'yonas.berhe007@gmail.com', // list of receivers
+    subject: 'Message from personal website', // Subject line
+    // text: // plaintext body
+    html: "</b>" + data.Name + "</br>" + data.Email + "</br> " + data.Message
+  };
+
+
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      return console.log(error);
+    }
+    console.log('Message sent: ' + info.response);
+  });
+  // res.sendStatus(200);
+})
 
 
 app.listen(4812, function () {
