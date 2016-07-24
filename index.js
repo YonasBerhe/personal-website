@@ -42,32 +42,44 @@ app.post('/data', function(req, res) {
 
 
   var transporter = nodemailer.createTransport('SMTP', {
-    service: 'gmail',
+    service: 'outlook',
     auth: {
-      user: 'yonas.berhe007@gmail.com',
+      user: 'ymberhe@outlook.com',
       pass: creds.pass
     }
   });
+
+  // var transporter = nodemailer.createTransport('smtps://user%40gmail.com:pass@smtp.gmail.com');
+
 
   // setup e-mail data with unicode symbols
   var mailOptions = {
     // check if you need these from
     from: data.Email, // sender address
-    to: 'ymberhe@outlook.com', // list of receivers
+    to: 'yonas.berhe007@gmail.com', // list of receivers
     subject: 'Message from personal website', // Subject line
     // text: // plaintext body
     html: "</b>" + data.Name +  "</br>" + data.Email + "</br> " +   data.Message 
   };
 
   // send mail with defined transport object
-  transporter.sendMail(mailOptions, function(error, info) {
-    if (error) {
-      return console.log(error);
+  // transporter.sendMail(mailOptions, function(error, info) {
+  //   if (error) {
+  //     return console.log(error);
+  //   }
+  //   console.log('Message sent: ' + info.response);
+  // });
+
+
+transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+        return console.log(error);
     }
     console.log('Message sent: ' + info.response);
-  });
+});
   // res.sendStatus(200);
 })
+
 
 app.listen(4812, function() {
   console.log("server has started on port 4812");
