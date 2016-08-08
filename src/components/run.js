@@ -11,7 +11,7 @@ import Caselist from './caselist';
 import Devproj from './devprojects.js';
 import About from './about';
 import {hashHistory, Router, Route} from 'react-router';
-
+import Books from './books'
 
 //DO this: App not routing to home from any page check react-router
 // Render the main component into the dom
@@ -26,6 +26,7 @@ ReactDOM.render((
       <Route path = "/about" component={About} />
       <Route path = "/development" component={Devproj} />
       <Route path = "/route" component={RouteForm} />
+      <Route path = "/books" component={Books} />
 
   </Router>
 ), document.getElementById('app'))
