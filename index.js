@@ -48,7 +48,7 @@ app.get('/', function (req, res) {
   res.send('Hello Server');
 });
 
-app.get('/books', function (req, res) {
+app.post('/books', function (req, res) {
 
   gr.getSingleShelf({
     'userID': '40688141',
